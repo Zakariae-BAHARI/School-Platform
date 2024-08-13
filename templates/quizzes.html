@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="content">
+        <h1>Quizzes</h1>
+        <div class="quiz-list">
+            {% for quiz in quizzes %}
+                <div class="quiz-card">
+                    <h2>{{ quiz.title }}</h2>
+                    <p>{{ quiz.description }}</p>
+                    <a class="button" href="{{ url_for('quiz_details', quiz_id=quiz.id) }}">Voir les détails</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

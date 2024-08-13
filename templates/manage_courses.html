@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="manage-courses">
+    <h1>Gestion des Cours</h1>
+    <form method="POST" action="{{ url_for('manage_courses') }}">
+        <input type="hidden" name="course_id" value="{{ course.id if course else '' }}">
+        <div class="form-group">
+            <label for="title">Titre</label>
+            <input type="text" id="title" name="title" value="{{ course.title if course else '' }}" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" required>{{ course.description if course else '' }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="content">Contenu du Cours</label>
+            <textarea id="content" name="content" required>{{ course.content if course else '' }}</textarea>
+        </div>
+        <button type="submit">{{ 'Modifier' if course else 'Ajouter' }} Cours</button>
+    </form>
+    <h2>Supprimer un Cours</h2>
+    <form method="POST" action="{{ url_for('delete_course') }}">
+        <select name="course_id">
+            {% for course in courses %}
+            <option value="{{ course.id }}">{{ course.title }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Supprimer</button>
+    </form>
+</div>
+{% endblock %}

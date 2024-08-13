@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="course-details">
+    <h1>{{ course.title }}</h1>
+    <p><strong>Description:</strong> {{ course.description }}</p>
+    <div class="course-content">
+        <h2>Contenu du Cours</h2>
+        <p>{{ course.content|safe }}</p>  <!-- Utilisez 'safe' pour rendre le contenu HTML s'il y a des balises -->
+    </div>
+    <a href="{{ url_for('courses') }}" class="button">Retour aux cours</a>
+</div>
+{% endblock %}

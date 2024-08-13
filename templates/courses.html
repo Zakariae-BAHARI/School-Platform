@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="courses">
+    <h1>Cours Disponibles</h1>
+    <div class="course-list">
+        {% for course in courses %}
+        <div class="course-card">
+            <h2><a href="{{ url_for('course_details', course_id=course.id) }}">{{ course.title }}</a></h2>
+            <p>{{ course.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

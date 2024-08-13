@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="dashboard">
+    <h1>Tableau de Bord</h1>
+    <div class="card-container">
+        <div class="card">
+            <h2>Mes Cours</h2>
+            <ul>
+                {% for course in courses %}
+                <li>{{ course.title }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="card">
+            <h2>Évaluations à venir</h2>
+            <ul>
+                {% for quiz in quizzes %}
+                <li>{{ quiz.title }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="card">
+            <h2>Progression</h2>
+            <ul>
+                {% for progress in progress_list %}
+                <li>{{ progress.course_title }}: {{ progress.percentage }}%</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="card">
+            <h2>Dernières Notifications</h2>
+            <ul>
+                {% for notification in notifications %}
+                <li>{{ notification }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

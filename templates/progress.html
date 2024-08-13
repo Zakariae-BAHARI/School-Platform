@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Progression pour {{ course.title }}</h1>
+
+<div class="progress-container">
+    <p>Votre progression : {{ progress_percentage }}%</p>
+    <div class="progress-bar">
+        <div class="progress" ></div>
+    </div>
+</div>
+
+<a href="{{ url_for('courses') }}" class="button">Retour aux cours</a>
+{% endblock %}
