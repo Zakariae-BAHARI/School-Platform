@@ -4,7 +4,6 @@ def initialize_db():
     db.drop_all()
     db.create_all()
 
-    # Ajout de données initiales
     student = User(name='Élève Exemple', email='student@example.com', password='password', role='student')
     teacher = User(name='Professeur Exemple', email='teacher@example.com', password='password', role='teacher')
     
