@@ -15,7 +15,7 @@ This is a simple web application designed to improve learning experiences in sch
 ## The app UI
 
 ###  Dashboard page
-![Home Page](Screenshot 2024-08-13 142951.png)
+![Home Page](Screenshot_2024-08-13_142933.png)
 
 
 ###  Courses page
